@@ -32,11 +32,11 @@ for i in listaDeTipos:
         id+=1
         plaza = Plaza(id,i.nombre)
         listaDePlazas.append(plaza)
-
+#El ultimo id es 33
 for i in listaDePlazas:
     print(i.id, i.tipoPlaza, i.reservada, i.ocupada)
 
-parking = Parking(listaDeClientes,listaDePlazas,listaDeTipos)
+parking = Parking(listaDeClientes,listaDePlazas,listaDeTipos, [],33)
 
 # # Escritura en modo binario, vacía el fichero si existe
 fichero = open('datos.pckl','wb')

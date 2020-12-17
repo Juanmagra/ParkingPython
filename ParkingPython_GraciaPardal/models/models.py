@@ -1,6 +1,6 @@
 # Class cliente
 class Cliente():
-    def __init__(self, dni, nombre, abonoPin, vehiculo, plaza, fechaAlta, fechaExpiracion):
+    def __init__(self, dni=0, nombre="", abonoPin=0, vehiculo=0, plaza=0, fechaAlta=0, fechaExpiracion=0):
         self.__dni = dni
         self.__nombre = nombre
         self.__abonoPin = abonoPin
@@ -66,6 +66,9 @@ class Cliente():
     def setFechaExpiracion(self, nuevo):
         self.__fechaExpiracion = nuevo
 
+    def __str__(self):
+        return "dni: %s, nombre: %s, plaza: %s, vehiculo: %s, abonoPin: %s, fechaAlta: %s, fechaExpiracion: %s" % (self.__dni,self.__nombre,self.__plaza,self.__vehiculo, self.__abonoPin, self.__fechaAlta, self.__fechaExpiracion)
+
     pass
 
 
@@ -73,7 +76,7 @@ class Cliente():
 
 # Clase Tipo Plaza
 class TipoPlaza():
-    def __init__(self, id=0, nombre="", cantidadDisponible=0, cantidadReserved=1, cantidadUsada=0):
+    def __init__(self, id=0, nombre="", cantidadDisponible=0, cantidadReserved=0, cantidadUsada=0):
         self.__id = id
         self.__nombre = nombre
         self.__cantidadDisponible = cantidadDisponible
@@ -122,7 +125,7 @@ class TipoPlaza():
         self.__cantidadUsada = nuevo
 
     def __str__(self):
-        return "Tipo plaza:\n" +"id:" + str(self.__id) + "\nnombre: " + self.__nombre  + "\nCantidad disponible: " + str(self.__cantidadDisponible) + "\nCantidad Usadas: " + str(self.__cantidadUsada)#+"\nCantidad Reservada: " + str(self.__cantidadReserved)
+        return "id: %s, nombre: %s, cantidadReserved: %s, cantidadUsada: %s, cantidadDisponible %s"%(self.__id,self.__nombre,self.__cantidadReserved, self.__cantidadUsada, self.__cantidadDisponible)
 
     pass
 
@@ -131,7 +134,7 @@ class TipoPlaza():
 
 # Clase Plaza
 class Plaza():
-    def __init__(self, id, tipoPlaza, ocupada=False, reservada=False):
+    def __init__(self,  id=0, tipoPlaza="", ocupada=False, reservada=False):
         self.__id = id
         self.__tipoPlaza = tipoPlaza
         self.__ocupada = ocupada
@@ -170,6 +173,9 @@ class Plaza():
     def setReservada(self, nuevo):
         self.__reservada = nuevo
 
+    def __str__(self):
+        return "id: %s, ocupada: %s, tipoPlaza: %s, reservada: %s "%(self.__id, self.__ocupada, self.__tipoPlaza, self.__reservada)
+
     pass
 
 
@@ -177,7 +183,7 @@ class Plaza():
 
 # Clase Ticket
 class Ticket():
-    def __init__(self, id, matricula, fechaEntrada, pin, plaza, precioFinal=0, fechaSalida=0):
+    def __init__(self, matricula, fechaEntrada, pin, plaza, precioFinal=0, fechaSalida=0, id=0):
         self.__id = id
         self.__matricula = matricula
         self.__fechaEntrada = fechaEntrada
@@ -243,6 +249,14 @@ class Ticket():
     def setFechaSalida(self, nuevo):
         self.__fechaSalida = nuevo
 
+    def __str__(self):
+        return "--------Ticket--------" \
+               "* PIN: %s; PLAZA: %s *" \
+               "* MATRICULA %s *" \
+               "* ENTRADA: %s *" \
+               "* SALIDA: %s *" \
+               "* PRECIO: %s *" \
+               "---GRACIAS POR VENIR---"%(self.__pin, self.__plaza, self.__matricula, self.__fechaEntrada, self.__fechaSalida, self.__precioFinal)
     pass
 
 
@@ -250,11 +264,12 @@ class Ticket():
 
 # Clase Parking
 class Parking():
-    def __init__(self, listaUsuarios=[], listaPlazas=[], listaTipos=[],listaTickets=[]):
+    def __init__(self, listaUsuarios=[], listaPlazas=[], listaTipos=[],listaTickets=[], id=0):
         self.__listaUsuarios = listaUsuarios
         self.__listaPlazas = listaPlazas
         self.__listaTickets = listaTickets
         self.__listaTipos = listaTipos
+        self.__id = id
 
     # Getters & Setters
     @property
@@ -272,6 +287,9 @@ class Parking():
     @property
     def listaTicktes(self):
         return self.__listaTickets
+    @property
+    def id(self):
+        return self.__id
 
     @listaUsuarios.setter
     def setListaUsuarios(self, nuevo):
@@ -288,6 +306,14 @@ class Parking():
     @listaTipos.setter
     def setListaTipos(self,nuevo):
         self.__listaTipos = nuevo
+
+    @id.setter
+    def id(self, nuevo:int):
+        self.__id = nuevo
+
+    def idGenerator(self):
+        self.__id +=1
+        return self.__id
 
     pass
 
@@ -308,6 +334,8 @@ class Vehiculo():
     def setMatricula(self, nuevo):
         self.__matricula = nuevo
 
+    def __str__(self):
+        return "matricula : %s"%(self.__matricula)
     pass
 
 
@@ -326,6 +354,9 @@ class Turismo(Vehiculo):
     def setTarifa(self, nuevo):
         self.__tarifa = nuevo
 
+    def __str__(self):
+        return super().__str__() + ", tarifa: %s"%(self.__tarifa)
+
     pass
 
 class Moto(Vehiculo):
@@ -342,6 +373,8 @@ class Moto(Vehiculo):
     def setTarifa(self, nuevo):
         self.__tarifa = nuevo
 
+    def __str__(self):
+        return super().__str__() + ", tarifa: %s"%(self.__tarifa)
     pass
 
 class Minusvalido(Vehiculo):
@@ -357,5 +390,8 @@ class Minusvalido(Vehiculo):
     @tarifa.setter
     def setTarifa(self, nuevo):
         self.__tarifa = nuevo
+
+    def __str__(self):
+        return super().__str__() + ",  tarifa: %s"%(self.__tarifa)
 
     pass
