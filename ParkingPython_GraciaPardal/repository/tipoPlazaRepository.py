@@ -32,7 +32,7 @@ def buscarTipoPorId(id):
 
 
 def añadirTipo(tipo):
-    tipo.setId(parking.idGenerator())
+    tipo.setId =parking.idGenerator()
     tipos.append(tipo)
     fichero = open('../datos/datos.pckl', 'wb')
     #

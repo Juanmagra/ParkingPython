@@ -250,13 +250,14 @@ class Ticket():
         self.__fechaSalida = nuevo
 
     def __str__(self):
-        return "--------Ticket--------" \
-               "* PIN: %s; PLAZA: %s *" \
-               "* MATRICULA %s *" \
-               "* ENTRADA: %s *" \
-               "* SALIDA: %s *" \
-               "* PRECIO: %s *" \
-               "---GRACIAS POR VENIR---"%(self.__pin, self.__plaza, self.__matricula, self.__fechaEntrada, self.__fechaSalida, self.__precioFinal)
+        return "----------------Ticket----------------\n" \
+               "* PLAZA: %s         \n" \
+               "* PIN: %s           \n" \
+               "* MATRICULA %s      \n" \
+               "* ENTRADA: %s       \n" \
+               "* SALIDA: %s        \n" \
+               "* PRECIO: %s        \n" \
+               "-----------GRACIAS POR VENIR----------"%( self.__plaza, self.__pin,self.__matricula, self.__fechaEntrada, self.__fechaSalida, self.__precioFinal)
     pass
 
 
@@ -308,7 +309,7 @@ class Parking():
         self.__listaTipos = nuevo
 
     @id.setter
-    def id(self, nuevo:int):
+    def setId(self, nuevo:int):
         self.__id = nuevo
 
     def idGenerator(self):

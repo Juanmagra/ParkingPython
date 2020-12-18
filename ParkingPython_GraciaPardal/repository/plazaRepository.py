@@ -15,6 +15,13 @@ plazas = parking.listaPlazas
 def todasPlazas():
     return parking.listaPlazas
 
+def buscarPlazaPorTipo(tipo):
+    plazaPorTipo = [Plaza]
+    for plaza in parking.listaPlazas:
+        if tipo.nombre == plaza.tipoPlaza:
+            plazaPorTipo.append(plaza)
+    return plazaPorTipo
+
 def buscarPlazaPorId(id):
     plazaId =Plaza()
     for plaza in plazas:
@@ -25,7 +32,7 @@ def buscarPlazaPorId(id):
 def añadirPlaza(plaza):
     idPlaza = parking.idGenerator()
     print(type(idPlaza))
-    plaza.setId(idPlaza)
+    plaza.setId=idPlaza
     plazas.append(plaza)
     fichero = open('../datos/datos.pckl', 'wb')
     #

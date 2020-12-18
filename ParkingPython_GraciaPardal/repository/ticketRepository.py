@@ -11,7 +11,7 @@ fichero.close()
 tickets = parking.listaTicktes
 
 def todosTickets():
-    return parking.listaTipos
+    return parking.listaTicktes
 def buscarTicketPorId(id):
     ticketId = Ticket()
     for ticket in tickets:
@@ -34,7 +34,9 @@ def buscarTicketPorPlaza(plaza):
     return ticketPlaza
 
 def añadirTicket(ticket):
-    ticket.setId(parking.idGenerator())
+    if ticket.id == 0:
+        ticket.setId = parking.idGenerator()
+
     tickets.append(ticket)
     fichero = open('../datos/datos.pckl', 'wb')
     #
@@ -52,3 +54,16 @@ def eliminarTicket(id):
     pickle.dump(parking, fichero)
     #
     fichero.close()
+
+def editarTicket(id, ticket):
+    eliminarTicket(buscarTicketPorId(id))
+    ticket.setId = id
+    añadirTicket(ticket)
+    fichero = open('../datos/datos.pckl', 'wb')
+    #
+    # # Escribe la colección en el fichero
+    pickle.dump(parking, fichero)
+    #
+    fichero.close()
+
+

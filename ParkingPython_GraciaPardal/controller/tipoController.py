@@ -11,11 +11,11 @@ tipo = TipoPlaza()
 addTipo(tipo)
 for cli in allTipos():
     print(cli)
-print("\n El tipo 0:")
-print((tipoPorId(0)))
+print("\n El tipo 34:")
+print((tipoPorId(34)))
 
 print("\n Eliminar tipo vacio:")
-deleteTipo(0)
+deleteTipo(34)
 
 print("\n Todos los tipos:")
 for cli in allTipos():
