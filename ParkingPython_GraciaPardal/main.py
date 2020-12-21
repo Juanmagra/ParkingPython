@@ -1,5 +1,7 @@
 import controller.conClienteController as conClienteController
 import controller.sinClienteController as sinClienteController
+import controller.adminController as adminController
+
 app = True
 while app:
     user = input("Bienvenido a ParkingPython\n 1. Usuario\n 2. Administrador\n 0. Cerrar\n Entrada:  ")
@@ -51,7 +53,20 @@ while app:
 
     #Admin
     elif user =="2":
-        print("ADMIN")
+        opcion = input("\n 1. Crear cliente\n 2. Mostrar estado de plazas\n 3. Mostrar listado de tickets\n 4. Mostrar todos los clientes\n Entrada: ")
+        if opcion =="1":
+            cliente = sinClienteController.creaCliente()
+            if cliente == False:
+                print("Ocurrio un problema creando el cliente.")
+            else:
+                print("Cliente creado con exito!\n")
+                print(cliente)
+        elif opcion =="2":
+            adminController.listarPlazas()
+        elif opcion =="3":
+            adminController.listarTickets()
+        elif opcion=="4":
+            adminController.listarAbonados()
     #Cerrar
     else:
         print("Cerrando el programa, vuelva pronto.")

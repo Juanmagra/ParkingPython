@@ -4,7 +4,6 @@ from datetime import datetime, timedelta
 from models.models import *
 # Fecha de expiracion (6 meses)
 expiracion = datetime.now() + timedelta(days=180)
-
 # Vehiculos
 moto = Moto("1111")
 minusvalido = Minusvalido("2222")
