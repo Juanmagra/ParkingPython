@@ -5,7 +5,7 @@ class Cliente():
         self.__nombre = nombre
         self.__abonoPin = abonoPin
         self.__vehiculo = vehiculo
-        self.__plaza = plaza
+        self.__plazaId = plaza
         self.__fechaAlta = fechaAlta
         self.__fechaExpiracion = fechaExpiracion
 
@@ -27,8 +27,8 @@ class Cliente():
         return self.__vehiculo
 
     @property
-    def plaza(self):
-        return self.__plaza
+    def plazaId(self):
+        return self.__plazaId
 
     @property
     def fechaAlta(self):
@@ -54,9 +54,9 @@ class Cliente():
     def setVehiculo(self, nuevo):
         self.__vehiculo = nuevo
 
-    @plaza.setter
-    def setPlaza(self, nuevo):
-        self.__plaza = nuevo
+    @plazaId.setter
+    def setPlazaId(self, nuevo):
+        self.__plazaId = nuevo
 
     @fechaAlta.setter
     def setFechaAlta(self, nuevo):
@@ -67,7 +67,9 @@ class Cliente():
         self.__fechaExpiracion = nuevo
 
     def __str__(self):
-        return "dni: %s, nombre: %s, plaza: %s, vehiculo: %s, abonoPin: %s, fechaAlta: %s, fechaExpiracion: %s" % (self.__dni,self.__nombre,self.__plaza,self.__vehiculo, self.__abonoPin, self.__fechaAlta, self.__fechaExpiracion)
+        return "dni: %s, nombre: %s, plazaId: %s, vehiculo: %s, abonoPin: %s, fechaAlta: %s, fechaExpiracion: %s" % (
+            self.__dni, self.__nombre, self.__plazaId, self.__vehiculo, self.__abonoPin, self.__fechaAlta,
+            self.__fechaExpiracion)
 
     pass
 
@@ -117,7 +119,7 @@ class TipoPlaza():
         self.__cantidadDisponible = nuevo
 
     @cantidadReserved.setter
-    def setCantidadReservada(self, nuevo):
+    def setCantidadReserved(self, nuevo):
         self.__cantidadReserved = nuevo
 
     @cantidadUsada.setter
@@ -125,7 +127,8 @@ class TipoPlaza():
         self.__cantidadUsada = nuevo
 
     def __str__(self):
-        return "id: %s, nombre: %s, cantidadReserved: %s, cantidadUsada: %s, cantidadDisponible %s"%(self.__id,self.__nombre,self.__cantidadReserved, self.__cantidadUsada, self.__cantidadDisponible)
+        return "id: %s, nombre: %s, cantidadReserved: %s, cantidadUsada: %s, cantidadDisponible %s" % (
+        self.__id, self.__nombre, self.__cantidadReserved, self.__cantidadUsada, self.__cantidadDisponible)
 
     pass
 
@@ -134,7 +137,7 @@ class TipoPlaza():
 
 # Clase Plaza
 class Plaza():
-    def __init__(self,  id=0, tipoPlaza="", ocupada=False, reservada=False):
+    def __init__(self, id=0, tipoPlaza="", ocupada=False, reservada=False):
         self.__id = id
         self.__tipoPlaza = tipoPlaza
         self.__ocupada = ocupada
@@ -174,7 +177,8 @@ class Plaza():
         self.__reservada = nuevo
 
     def __str__(self):
-        return "id: %s, ocupada: %s, tipoPlaza: %s, reservada: %s "%(self.__id, self.__ocupada, self.__tipoPlaza, self.__reservada)
+        return "id: %s, ocupada: %s, tipoPlaza: %s, reservada: %s " % (
+        self.__id, self.__ocupada, self.__tipoPlaza, self.__reservada)
 
     pass
 
@@ -183,12 +187,12 @@ class Plaza():
 
 # Clase Ticket
 class Ticket():
-    def __init__(self, matricula, fechaEntrada, pin, plaza, precioFinal=0, fechaSalida=0, id=0):
+    def __init__(self, matricula="", fechaEntrada=0, pin=0, plazaId="", precioFinal=0, fechaSalida=0, id=0):
         self.__id = id
         self.__matricula = matricula
         self.__fechaEntrada = fechaEntrada
         self.__pin = pin
-        self.__plaza = plaza
+        self.__plazaId = plazaId
         self.__precioFinal = precioFinal
         self.__fechaSalida = fechaSalida
 
@@ -210,8 +214,8 @@ class Ticket():
         return self.__pin
 
     @property
-    def plaza(self):
-        return self.__plaza
+    def plazaId(self):
+        return self.__plazaId
 
     @property
     def precioFinal(self):
@@ -237,9 +241,9 @@ class Ticket():
     def setPin(self, nuevo):
         self.__pin = nuevo
 
-    @plaza.setter
-    def setPlaza(self, nuevo):
-        self.__plaza = nuevo
+    @plazaId.setter
+    def setPlazaId(self, nuevo):
+        self.__plazaId = nuevo
 
     @precioFinal.setter
     def setPrecioFinal(self, nuevo):
@@ -257,7 +261,9 @@ class Ticket():
                "* ENTRADA: %s       \n" \
                "* SALIDA: %s        \n" \
                "* PRECIO: %s        \n" \
-               "-----------GRACIAS POR VENIR----------"%( self.__plaza, self.__pin,self.__matricula, self.__fechaEntrada, self.__fechaSalida, self.__precioFinal)
+               "-----------GRACIAS POR VENIR----------" % (
+               self.__plazaId, self.__pin, self.__matricula, self.__fechaEntrada, self.__fechaSalida, self.__precioFinal)
+
     pass
 
 
@@ -265,7 +271,7 @@ class Ticket():
 
 # Clase Parking
 class Parking():
-    def __init__(self, listaUsuarios=[], listaPlazas=[], listaTipos=[],listaTickets=[], id=0):
+    def __init__(self, listaUsuarios=[], listaPlazas=[], listaTipos=[], listaTickets=[], id=0):
         self.__listaUsuarios = listaUsuarios
         self.__listaPlazas = listaPlazas
         self.__listaTickets = listaTickets
@@ -288,6 +294,7 @@ class Parking():
     @property
     def listaTicktes(self):
         return self.__listaTickets
+
     @property
     def id(self):
         return self.__id
@@ -301,20 +308,20 @@ class Parking():
         self.__listaPlazas = nuevo
 
     @listaTicktes.setter
-    def setListaTickets(self,nuevo):
+    def setListaTickets(self, nuevo):
         self.__listaTickets = nuevo
 
     @listaTipos.setter
-    def setListaTipos(self,nuevo):
+    def setListaTipos(self, nuevo):
         self.__listaTipos = nuevo
 
     @id.setter
-    def setId(self, nuevo:int):
+    def setId(self, nuevo: int):
         self.__id = nuevo
 
     def idGenerator(self):
-        self.__id +=1
-        return self.__id
+        self.__id += 1
+        return str(self.__id)
 
     pass
 
@@ -336,7 +343,8 @@ class Vehiculo():
         self.__matricula = nuevo
 
     def __str__(self):
-        return "matricula : %s"%(self.__matricula)
+        return "matricula : %s" % (self.__matricula)
+
     pass
 
 
@@ -356,9 +364,10 @@ class Turismo(Vehiculo):
         self.__tarifa = nuevo
 
     def __str__(self):
-        return super().__str__() + ", tarifa: %s"%(self.__tarifa)
+        return super().__str__() + ", tarifa: %s" % (self.__tarifa)
 
     pass
+
 
 class Moto(Vehiculo):
     def __init__(self, matricula, tarifa=0.08):
@@ -375,8 +384,10 @@ class Moto(Vehiculo):
         self.__tarifa = nuevo
 
     def __str__(self):
-        return super().__str__() + ", tarifa: %s"%(self.__tarifa)
+        return super().__str__() + ", tarifa: %s" % (self.__tarifa)
+
     pass
+
 
 class Minusvalido(Vehiculo):
     def __init__(self, matricula, tarifa=0.10):
@@ -393,6 +404,6 @@ class Minusvalido(Vehiculo):
         self.__tarifa = nuevo
 
     def __str__(self):
-        return super().__str__() + ",  tarifa: %s"%(self.__tarifa)
+        return super().__str__() + ",  tarifa: %s" % (self.__tarifa)
 
     pass

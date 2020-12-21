@@ -1,8 +1,8 @@
 import pickle
 
-from models.models import Parking, TipoPlaza, Cliente
+from models.models import TipoPlaza
 
-fichero = open('../datos/datos.pckl', 'rb')
+fichero = open('datos/datos.pckl', 'rb')
 
 # Cargamos los datos del fichero
 lista_fichero = pickle.load(fichero)
@@ -32,9 +32,11 @@ def buscarTipoPorId(id):
 
 
 def añadirTipo(tipo):
-    tipo.setId =parking.idGenerator()
+    if tipo.id =="0":
+        tipo.setId = parking.idGenerator()
+
     tipos.append(tipo)
-    fichero = open('../datos/datos.pckl', 'wb')
+    fichero = open('datos/datos.pckl', 'wb')
     #
     # # Escribe la colección en el fichero
     pickle.dump(parking, fichero)
@@ -45,9 +47,20 @@ def añadirTipo(tipo):
 def eliminarTipo(id):
     tipoDel = buscarTipoPorId(id)
     tipos.remove(tipoDel)
-    fichero = open('../datos/datos.pckl', 'wb')
+    fichero = open('datos/datos.pckl', 'wb')
     #
     # # Escribe la colección en el fichero
     pickle.dump(parking, fichero)
     #
     fichero.close()
+
+def editarTipo(tipo):
+    eliminarTipo(tipo.id)
+    añadirTipo(tipo)
+    fichero = open('datos/datos.pckl', 'wb')
+    #
+    # # Escribe la colección en el fichero
+    pickle.dump(parking, fichero)
+    #
+    fichero.close()
+

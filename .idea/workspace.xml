@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="619f7a44-5589-47a3-9e31-f6a24fd2c0fc" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/ParkingPython_GraciaPardal/controller/clienteController.py" beforeDir="false" afterPath="$PROJECT_DIR$/ParkingPython_GraciaPardal/controller/clienteController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParkingPython_GraciaPardal/controller/plazaController.py" beforeDir="false" afterPath="$PROJECT_DIR$/ParkingPython_GraciaPardal/controller/plazaController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParkingPython_GraciaPardal/controller/sinClienteController.py" beforeDir="false" afterPath="$PROJECT_DIR$/ParkingPython_GraciaPardal/controller/sinClienteController.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParkingPython_GraciaPardal/datos/BaseDeDatos.py" beforeDir="false" afterPath="$PROJECT_DIR$/ParkingPython_GraciaPardal/datos/BaseDeDatos.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParkingPython_GraciaPardal/datos/datos.pckl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParkingPython_GraciaPardal/models/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/ParkingPython_GraciaPardal/models/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParkingPython_GraciaPardal/repository/clienteRepository.py" beforeDir="false" afterPath="$PROJECT_DIR$/ParkingPython_GraciaPardal/repository/clienteRepository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParkingPython_GraciaPardal/repository/plazaRepository.py" beforeDir="false" afterPath="$PROJECT_DIR$/ParkingPython_GraciaPardal/repository/plazaRepository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParkingPython_GraciaPardal/repository/ticketRepository.py" beforeDir="false" afterPath="$PROJECT_DIR$/ParkingPython_GraciaPardal/repository/ticketRepository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParkingPython_GraciaPardal/repository/tipoPlazaRepository.py" beforeDir="false" afterPath="$PROJECT_DIR$/ParkingPython_GraciaPardal/repository/tipoPlazaRepository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParkingPython_GraciaPardal/services/clienteService.py" beforeDir="false" afterPath="$PROJECT_DIR$/ParkingPython_GraciaPardal/services/clienteService.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParkingPython_GraciaPardal/services/plazaService.py" beforeDir="false" afterPath="$PROJECT_DIR$/ParkingPython_GraciaPardal/services/plazaService.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParkingPython_GraciaPardal/services/ticketService.py" beforeDir="false" afterPath="$PROJECT_DIR$/ParkingPython_GraciaPardal/services/ticketService.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ParkingPython_GraciaPardal/services/tipoService.py" beforeDir="false" afterPath="$PROJECT_DIR$/ParkingPython_GraciaPardal/services/tipoService.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1lsQfcFKToi8eP4MtNLtCofL3sR" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="619f7a44-5589-47a3-9e31-f6a24fd2c0fc" name="Default Changelist" comment="" />
+      <created>1608383426288</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1608383426288</updated>
+    </task>
+    <servers />
+  </component>
+</project>
